@@ -13,6 +13,9 @@ object Fen {
         JOptionPane.showMessageDialog(null, message)
     }
 
+    /**
+     * Méthode
+     */
     @Throws(MalformedURLException::class)
     fun afficheTest(question: String?): String {
         val label = JLabel(icon)
@@ -22,17 +25,29 @@ object Fen {
         textPanel.add(JLabel(question))
         val panel2 = JPanel(BorderLayout())
         panel2.add(textPanel)
-        panel2.add(panel, BorderLayout.EAST)
+        panel2.add(panel, BorderLayout.WEST)
         return JOptionPane.showInputDialog(null, panel2, "Course", JOptionPane.DEFAULT_OPTION)
     }
 
+
+    /**
+     * Méthode qui affiche une fenêtre
+     * avec un input
+     * @param question String
+     * @return reponse String
+     */
     @Throws(MalformedURLException::class)
     fun attendRéponse(question: String?): String {
         val reponse: String
         reponse = JOptionPane.showInputDialog(question)
         return reponse
     }
-    fun afficheTest2(question: String?): Int {
+
+    /**
+     * Méthode qui affiche une fenêtre à 3 boutons et renvoie 0,1 ou 2
+     * pour oui, non, annuler
+     */
+    fun OuiNon(question: String?): Int {
 
         return JOptionPane.showConfirmDialog(null, question)
     }
